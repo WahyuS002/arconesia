@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration
             $table->foreignId('user_id');
             $table->string('title', 20);
             $table->mediumText('body');
-            $table->string('foto', 32);
+            $table->string('foto');
             $table->timestamp('tanggal');
 
             $table->timestamps();

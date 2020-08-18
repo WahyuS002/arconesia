@@ -25,12 +25,14 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        $data = auth()->user()->posts()->create($request->all());
+        $data = $request->all();
 
         $nama_foto = $request->foto->getClientOriginalName();
-        $data['foto'] = $request->foto->storeAs("images/post", $nama_foto);
+        $file = $request->foto->storeAs("images/post", $nama_foto);
 
-        $post = $data;
+        $data['foto'] = $file;
+
+        $post = auth()->user()->posts()->create($data);
 
         $post->tags()->attach($request->tags);
 
