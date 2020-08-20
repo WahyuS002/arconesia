@@ -29,11 +29,32 @@
                             <a class="nav-item mr-4 ml-4 font1 nav-link"
                                 style="font-weight: 900; letter-spacing: 1px;" href="#">Contact</a>
 
-                            <a type="button" href="{{ route('login') }}"
+                            <li class="nav-item dropdown">
+                            @auth
+                                <a class="nav-link dropdown-toggle mr-4 ml-4 font1"
+                                    style="font-weight: 900; letter-spacing: 1px;" href="#" id="navbarDropdown"
+                                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <div class="profile-comment"
+                                        style="background-image: url({{ url('frontend/images/mart7.jpeg') }});">
+                                    </div>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="Profile">
+                                    <a class="dropdown-item nav-item font1"
+                                        style="font-weight: 900; letter-spacing: 1px;"
+                                        href="{{ route('dashboard') }}">DASHBOARD</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item nav-item font1"
+                                        style="font-weight: 900; letter-spacing: 1px;" href="{{ route('logout') }}">LOGOUT</a>
+                                </div>
+                                @endauth
+                                @guest
+                                <a type="button" href="{{ route('login') }}"
                                 class="nav-item mr-4 ml-4 hbtn hb-fill-on pl-5 pr-5 bg-color1">
                                 {{-- <a href="{{ route('login') }}">Login</a>          --}}
-                                Login
-                            </a>
+                                    Login
+                                </a>                                    
+                                @endguest
+                        </li>
                         </div>
                     </div>
                 </div>

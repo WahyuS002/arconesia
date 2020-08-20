@@ -43,14 +43,16 @@ Route::middleware('admin')->group(function () {
     Route::get('/user/{user:id}/check', 'UserController@check')->name('user.check');
 
     Route::get('/user/{user:id}/verify', 'UserController@verify')->name('user.verify');
-});
 
-Route::middleware('petani')->group(function () {
-    // LAHAN
     Route::get('/lahan', 'FarmController@index')->name('farm');
 
     Route::get('/lahan/create', 'FarmController@create')->name('farm.create');
     Route::post('/lahan/store', 'FarmController@store')->name('farm.store');
+});
+
+Route::middleware('petani')->group(function () {
+    // LAHAN
+
 });
 
 Route::get('/verifikasi', 'FarmerController@kyc')->name('kyc');

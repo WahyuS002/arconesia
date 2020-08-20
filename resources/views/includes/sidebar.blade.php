@@ -42,6 +42,16 @@
                         </ul>
                     </li>
 
+                    <li class="menu-title">Lahan</li>
+
+                    <li class="{{ request()->is('lahan') ? ' nav-active' : '' }}">
+                        <a href="{{ route('farm') }}" class="waves-effect"><i class="dripicons-calendar"></i><span> Semua </span></a>
+                    </li>
+
+                    <li class="{{ request()->is('lahan/create') ? ' nav-active' : '' }}">
+                        <a href="{{ route('farm.create') }}" class="waves-effect"><i class="dripicons-calendar"></i><span> Tambah </span></a>
+                    </li>
+
                     <li class="menu-title">User</li>
 
                     <li class="{{ request()->is('user') ? ' nav-active' : '' }}">

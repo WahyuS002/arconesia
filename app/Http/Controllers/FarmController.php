@@ -26,13 +26,13 @@ class FarmController extends Controller
 
     public function store(Request $request)
     {
-        dd($request->id);
+        // dd($request->id);
 
         auth()->user()->farms()->create($request->all());
 
         // $data_invest = $request->all();
 
-        Invest::create($request->all());
+        // Invest::create($request->all());
 
         session()->flash('status', 'added new farm');
 

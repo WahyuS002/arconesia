@@ -84,8 +84,7 @@
             <div class="col-lg-9">
                 <!-- CARDS POSTING CONTAINER -->
                 <div class="container">
-                    <div class="row">
-
+                    <div class="row">                        
                         <!--POSTING CARD START -->
                         @foreach ($posts as $post)
                         <div class="col-lg-4">

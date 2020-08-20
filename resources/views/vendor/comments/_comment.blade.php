@@ -6,7 +6,8 @@
 @else
   <li id="comment-{{ $comment->getKey() }}" class="media">
 @endif
-    <img class="profile-comment" src="https://www.gravatar.com/avatar/{{ md5($comment->commenter->email ?? $comment->guest_email) }}.jpg?s=64" alt="{{ $comment->commenter->name ?? $comment->guest_name }} Avatar">    
+    {{-- <img class="profile-comment" src="https://www.gravatar.com/avatar/{{ md5($comment->commenter->email ?? $comment->guest_email) }}.jpg?s=64" alt="{{ $comment->commenter->name ?? $comment->guest_name }} Avatar">     --}}
+    <img class="profile-comment" src="{{ asset('frontend/images/mart7.jpeg') }}" alt="{{ $comment->commenter->name ?? $comment->guest_name }} Avatar">    
     <div class="media-body">
         {{-- <h5 class="mt-0 mb-1">{{ $comment->commenter->name ?? $comment->guest_name }} <small class="text-muted">- {{ $comment->created_at->diffForHumans() }}</small></h5> --}}
         <div class="col-lg-11">
